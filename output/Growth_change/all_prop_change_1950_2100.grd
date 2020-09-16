@@ -1,0 +1,25 @@
+[general]
+creator=R package 'raster'
+created=2020-09-16 13:21:01
+[georeference]
+nrows=144
+ncols=288
+xmin=0.625
+ymin=-89.375
+xmax=359.375
+ymax=89.375
+projection=NA
+[data]
+datatype=FLT4S
+byteorder=little
+nbands=4
+bandorder=BIL
+minvalue=-0.611636999147767:-0.413696692239387:-0.522626757621765:-0.392955516156712
+maxvalue=1.1265523373109:1.42098684265885:0.93333888053894:1.14776996377021
+nodatavalue=-3.4e+38
+[legend]
+legendtype=
+values=
+color=
+[description]
+layername=Coccolithophores:Cyanobacteria:Diatoms:Dinoflagellates
