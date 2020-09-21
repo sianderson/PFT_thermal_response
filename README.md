@@ -1,4 +1,4 @@
-# PFTs_thermal_change
+# PFT_thermal_response
 Marine phytoplankton functional types and their responses to thermal change
 
 These scripts are provided in the interests of open science. If you have questions or find errors, please let us know.
