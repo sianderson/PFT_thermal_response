@@ -1,6 +1,6 @@
 # Code for Anderson et al. (2021) 
 # Marine Phytoplankton Functional Types Exhibit Diverse Responses to Thermal Change
-# Stephanie I. Anderson updated 09/14/2020
+# Stephanie I. Anderson updated 09/14/2021
 
 # Contains:
 ## Statistical Analyses comparing thermal reaction norms
