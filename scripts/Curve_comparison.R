@@ -1,4 +1,5 @@
-# Code for Anderson et al. (in review, Nature Communications)
+# Code for Anderson et al. (2021) 
+# Marine Phytoplankton Functional Types Exhibit Diverse Responses to Thermal Change
 # Stephanie I. Anderson updated 09/14/2020
 
 # Contains:
@@ -103,3 +104,8 @@ mumax
 # Extended Figure 2
 plot_grid(viable, mumax, labels =letters[1:2], rel_widths=c(1, 1))
 ggsave('figures/Extended_Figure2.pdf', width = 6.5, height = 3.5)
+
+############ AIC Model Comparison ############
+mod1 <- rq(ln.r~temperature+group, data=rates,tau=0.99)
+mod2 <- rq(ln.r~temperature*group, data=rates,tau=0.99)
+AICctab(mod1, mod2, nobs=length(rates$ln.r), delta=TRUE, sort=TRUE, weights=FALSE, base=TRUE)
