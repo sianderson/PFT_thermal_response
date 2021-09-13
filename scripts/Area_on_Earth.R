@@ -1,4 +1,5 @@
-# Code for Anderson et al. (in review, Nature Communications)
+# Code for Anderson et al. (2021) 
+# Marine Phytoplankton Functional Types Exhibit Diverse Responses to Thermal Change
 # Stephanie I. Anderson updated 09/14/2020
 
 # function to calculate area on Earth (latitude-longitude quandrangle)
