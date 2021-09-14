@@ -291,11 +291,32 @@ table1$N <- rbind(length(rates$isolate.code),length(subset(rates, group=="coccol
                length(subset(rates, group=="dinoflagellates")$isolate.code))
 
 #Coefficients for exponential curves (calculated above)
-table1$a <- rbind(cf.b[[1]], cf.co[[1]], cf.bcb[[1]], cf.bd[[1]], cf.di[[1]])
-table1$b <- rbind(cf.b[[2]], cf.co[[2]], cf.bcb[[2]], cf.bd[[2]], cf.di[[2]])
+table1$a <- rbind(round(cf.b[[1]],3), round(cf.co[[1]],3), round(cf.bcb[[1]],3), 
+                                                           round(cf.bd[[1]],3), round(cf.di[[1]],3))
+
+table1$a_ci <- rbind(paste0("[",round(ci[[1]],3),", ",round(ci[[3]],3),"]"),
+                     paste0("[",round(ci_co[[1]],3),", ",signif(ci_co[[3]],3),"]"),
+                     paste0("[",round(ci_cy[[1]],3),", ",round(ci_cy[[3]],3),"]"),
+                     paste0("[",round(ci_d[[1]],3),", ",round(ci_d[[3]],3),"]"),
+                     paste0("[",round(ci_df[[1]],3),", ",round(ci_df[[3]],3),"]"))
+
+table1$b <- rbind(round(cf.b[[2]],3), round(cf.co[[2]],3), round(cf.bcb[[2]],3), 
+                                                           round(cf.bd[[2]],3), round(cf.di[[2]],3))
+
+table1$b_ci <- rbind(paste0("[",round(ci[[2]],3),", ",round(ci[[4]],3),"]"),
+                     paste0("[",round(ci_co[[2]],3),", ",round(ci_co[[4]],3),"]"),
+                     paste0("[",round(ci_cy[[2]],3),", ",round(ci_cy[[4]],3),"]"),
+                     paste0("[",round(ci_d[[2]],3),", ",round(ci_d[[4]],3),"]"),
+                     paste0("[",round(ci_df[[2]],3),", ",round(ci_df[[4]],3),"]"))
 
 # calculated variables
 table1$intercept = exp(table1$a) # y-intercept
+table1$int_ci <- rbind(paste0("[",round(exp(ci[[1]]),3),", ",round(exp(ci[[3]]),3),"]"),
+                     paste0("[",round(exp(ci_co[[1]]),3),", ",signif(exp(ci_co[[3]]),3),"]"),
+                     paste0("[",round(exp(ci_cy[[1]]),3),", ",round(exp(ci_cy[[3]]),3),"]"),
+                     paste0("[",round(exp(ci_d[[1]]),3),", ",round(exp(ci_d[[3]]),3),"]"),
+                     paste0("[",round(exp(ci_df[[1]]),3),", ",round(exp(ci_df[[3]]),3),"]"))
+
 table1$Q10 = exp(table1$b*10) # Q10
 table1$Ea = Ea(table1$b) # acivation energy
 table1$umax20 = exp(table1$a+table1$b*20) # maximum growth at 20ºC
